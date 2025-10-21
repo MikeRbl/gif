@@ -1,1 +1,2 @@
-<p>trending-page works!</p>
+<h2 class="text-2xl font-semibold mb-4 text-white">Trending GIFs</h2>
+<app-gif-list [gifs]="gifService.gifList()" [isLoading]="gifService.isLoading()"></app-gif-list>

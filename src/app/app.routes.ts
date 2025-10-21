@@ -1,8 +1,9 @@
+// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'dashboard',
+    path: '', // Cambiado de 'dashboard' para ser la ruta principal
     loadComponent: () => import('./gifs/pages/dashboard-page/dashboard-page.component')
       .then(m => m.DashboardPageComponent),
     children: [
@@ -19,19 +20,15 @@ export const routes: Routes = [
           .then(m => m.TrendingPageComponent),
       },
       {
-        path: '',
+        path: '', // Ruta por defecto dentro de dashboard
         redirectTo: 'trending',
         pathMatch: 'full'
       }
     ]
   },
+  // Ya no necesitas redirecciones aquí si '' carga el dashboard
   {
-    path: '',
-    redirectTo: '/dashboard',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: '/dashboard'
+    path: '**', // Captura cualquier otra ruta
+    redirectTo: '' // Redirige a la ruta principal (dashboard)
   }
 ];

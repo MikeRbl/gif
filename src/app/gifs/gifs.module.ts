@@ -13,13 +13,6 @@ import { GisSideMenuHistoryComponent } from './components/side-menu/gis-side-men
 
 @NgModule({
   declarations: [
-    DashboardPageComponent,
-    SearchPageComponent,
-    TrendingPageComponent,
-    SideMenuComponent,
-    GifsSideMenuHeaderComponent,
-    GifsSideMenuOptionsComponent,
-    GisSideMenuHistoryComponent
   ],
   imports: [
     CommonModule,

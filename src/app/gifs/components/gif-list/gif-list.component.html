@@ -1,0 +1,19 @@
+<div *ngIf="isLoading" class="flex justify-center items-center h-64">
+  <p class="text-gray-500">Loading...</p> </div>
+
+<div *ngIf="!isLoading && gifs.length === 0" class="flex justify-center items-center h-64">
+  <p class="text-gray-500">No GIFs found.</p>
+</div>
+
+<div *ngIf="!isLoading && gifs.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div *ngFor="let gif of gifs" class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out bg-gray-800">
+    <img
+      [src]="gif.images.fixed_height.url"
+      [alt]="gif.title || 'GIF'"
+      class="w-full h-48 object-cover"
+      loading="lazy">
+    <div class="p-2">
+      <p class="text-xs text-gray-400 truncate">{{ gif.title || 'No Title' }}</p>
+    </div>
+  </div>
+</div>
